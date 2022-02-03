@@ -288,3 +288,11 @@ ul.errorlist{
 .catLinks:hover{
   color: grey !important;
 }
+
+.contactForm{
+  width: 50%;
+  margin: 10px auto;
+  background-color: rgba(24, 64, 8);
+  border-radius: 5px;
+  padding: 1px 0;
+}
