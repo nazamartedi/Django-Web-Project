@@ -8,7 +8,7 @@ urlpatterns = [
     # path('services/', views.services, name='Services'),
     path('store/', views.store, name='Store'),
     # path('blog/', views.blog, name='Blog'),
-    path('contact/', views.contact, name='Contact'),
+    # path('contact/', views.contact, name='Contact'),
 ]
 
 # For seeing images

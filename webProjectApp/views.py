@@ -23,6 +23,6 @@ def store(request):
 #     return render(request, 'blog.html')
 
 
-def contact(request):
+# def contact(request):
     
-    return render(request, 'contact.html')
+#     return render(request, 'contact.html')
