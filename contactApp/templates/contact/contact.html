@@ -4,10 +4,17 @@
 {% block content %}
     
     <div class="contactForm">
+
+        <!-- If in the request of the page was previously a post -->
+        {% if "valid" in request.GET %}
+            <p style="text-align: center; font-weight: 300; color: whitesmoke;">Formulario enviado exitosamente!</p>
+        {% endif %}
+
+        <!-- For the first 'get' of the page -->
         <form action="" method="post">
             {% csrf_token %}
             <table style="color: whitesmoke; margin: 5px auto;">{{contact_form.as_table}}</table>
-            <input style="width: 150px;" type="submit" value="Enviar">
+            <input style="width: 150px; margin: auto;" type="submit" value="Enviar">
         </form>
     </div>
     

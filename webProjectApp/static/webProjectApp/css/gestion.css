@@ -291,7 +291,8 @@ ul.errorlist{
 
 .contactForm{
   width: 50%;
-  margin: 10px auto;
+  margin: 10px auto !important;
+  text-align: center;
   background-color: rgba(24, 64, 8);
   border-radius: 5px;
   padding: 1px 0;
