@@ -13,9 +13,9 @@ def home(request):
 #     return render(request, 'services.html', {'services':services})
 
 
-def store(request):
+# def store(request):
     
-    return render(request, 'store.html')
+#     return render(request, 'store.html')
 
 
 # def blog(request):
