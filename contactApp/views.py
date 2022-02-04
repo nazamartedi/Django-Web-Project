@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.core.mail import EmailMessage
 from .forms import ContactForm
 
 def contact(request):
@@ -15,7 +16,13 @@ def contact(request):
             email = request.POST.get('email')
             content = request.POST.get('content')
             
-            # If success
-            return redirect('/contact/?valid')
+            email = EmailMessage('Lead Message', '{} dice:\n\n{}'.format(name, content), '', ['nazamartedi@gmail.com'], reply_to=[email] )
+            
+            try:
+                # If success
+                email.send()
+                return redirect('/contact/?valid')
+            except:
+                return redirect('/contact/?notvalid')
         
     return render(request, 'contact/contact.html', {'contact_form':contact_form})
