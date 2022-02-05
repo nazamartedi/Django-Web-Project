@@ -22,6 +22,8 @@ class Product(models.Model):
     categories = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='store', null=True, blank=True)
     available = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
+    edited = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.name
