@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <form action="post" style="color: whitesmoke;"> {% csrf_token %}
+
+        {{form}}
+        <button type="submit" class="btn btn-success">Register</button>
+    </form>
+
+{% endblock %}
