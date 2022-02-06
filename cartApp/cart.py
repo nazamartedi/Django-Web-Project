@@ -7,8 +7,8 @@ class Cart:
         
         if not cart:
             cart = self.session['cart']={}
-        else:
-            self.cart = cart
+        # else:
+        self.cart = cart
     
     def add(self, product):
         if(str(product.id) not in self.cart.keys()):
@@ -23,6 +23,7 @@ class Cart:
             for key, value in self.cart.items():
                 if key == str(product.id):
                     value['quantity'] = value['quantity'] + 1
+                    value['price'] = float(value['price']) + product.price
                     break
         self.save_cart() 
     
@@ -39,11 +40,12 @@ class Cart:
     def subtract_product(self, product):
         for key, value in self.cart.items():
                 if key == str(product.id):
-                    if value['quantity'] == 1:
-                        self.delete(product)
-                    else:
-                        value['quantity'] = value['quantity'] - 1
-                        break
+                    value['quantity'] = value['quantity'] - 1
+                    value['price'] = float(value['price']) - product.price
+                     
+                    if value['quantity'] < 1:
+                         self.delete(product)
+                    break
         self.save_cart()
         
     def clean_cart(self):

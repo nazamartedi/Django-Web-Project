@@ -6,7 +6,9 @@
 <div class="container">
 
     <div style="float: right;">
-        <p style="color: whitesmoke;">${{cart_total_amount}}</p>
+
+        {% include 'cart/widget.html' %}
+
     </div>
 
     <div class="row">
@@ -24,7 +26,8 @@
                         </div>
 
                         <div class="card-footer text-center">
-                            <a href="#" class="btn btn-success">Agregar al carrito</a>
+                            <!-- Here we make use of the names given in the urls.py file -->
+                            <a href="{% url 'Cart:Add' product.id %}" class="btn btn-success">Agregar al carrito</a>
                         </div>
 
                     </div>

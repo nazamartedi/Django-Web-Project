@@ -29,7 +29,7 @@ def subtract_product(request, product_id):
     # url name given in urls.py
     return redirect('Store')
 
-def clean_cart(request, product_id):
+def clean_cart(request):
     
     cart = Cart(request)
     cart.clean_cart()
